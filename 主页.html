@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主页</title>
+</head>
+<body>
+    <div class="welcome-container">
+        <h2>欢迎</h2>
+        <p id="usernameDisplay"></p>
+    </div>
+
+    <script>
+        // 从 localStorage 中读取用户名
+        const loggedInUser = localStorage.getItem('loggedInUser');
+
+        // 如果用户已登录，显示用户名
+        if (loggedInUser) {
+            document.getElementById('usernameDisplay').textContent = `欢迎回来，${loggedInUser}！`;
+        } else {
+            // 如果用户未登录，跳转到登录页面
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
