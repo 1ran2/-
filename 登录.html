@@ -38,6 +38,8 @@
             background-color: #0056b3;
         }
     </style>
+    <!-- 引入CryptoJS库 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
 <body>
     <div class="login-container">
@@ -46,30 +48,6 @@
         <button onclick="login()">登录</button>
     </div>
 
-    <script>
-        function login() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            // 预设的账号密码
-            const validUsers = [
-                {username: 'user1', password: 'password1'},
-                {username: 'user2', password: 'password2'},
-                {username: 'user3', password: 'password3'}
-            ];
-
-            // 检查输入的账号密码是否正确
-            const isValid = validUsers.some(user => user.username === username && user.password === password);
-
-            if (isValid) {
-                // 如果正确，将用户名存储在 localStorage 中
-                localStorage.setItem('loggedInUser', username);
-                // 跳转到主页
-                window.location.href = '主页.html';
-            } else {
-                alert('账号或密码错误，请重试。');
-            }
-        }
-    </script>
+    <script src="登录.js"></script>
 </body>
 </html>
